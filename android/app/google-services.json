@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "358131713654",
+    "project_id": "rnwebrtcdemo",
+    "storage_bucket": "rnwebrtcdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358131713654:android:27a1a2914ce58fb879c157",
+        "android_client_info": {
+          "package_name": "com.demowebrtc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358131713654-aln68lrdu33u0frjahsni06infur18uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_nYo9toK1xmi-NQjAExd4kHsSNAwYKJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358131713654-aln68lrdu33u0frjahsni06infur18uq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "358131713654-c801ec7vrm7ur7iarhcpd87v9m8qam0l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "demowebrtc"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358131713654:android:919cad97e6c9ddd679c157",
+        "android_client_info": {
+          "package_name": "com.kitchkochef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "358131713654-aln68lrdu33u0frjahsni06infur18uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_nYo9toK1xmi-NQjAExd4kHsSNAwYKJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "358131713654-aln68lrdu33u0frjahsni06infur18uq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "358131713654-c801ec7vrm7ur7iarhcpd87v9m8qam0l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "demowebrtc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

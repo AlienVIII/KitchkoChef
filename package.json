@@ -1,0 +1,51 @@
+{
+  "name": "KitchkoChef",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "link": "npx react-native link",
+    "test": "jest",
+    "lint": "eslint .",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
+    "start": "npx react-native start --reset-cache",
+    "android-npm-port": "adb reverse tcp:8081 tcp:8081",
+    "android-reactotron-port": "adb reverse tcp:9090 tcp:9090",
+    "devmenu": "adb shell input keyevent 82",
+    "reload": "adb shell input keyevent 82 && adb shell input keyevent 66 && adb shell input keyevent 66",
+    "debug": "adb shell input keyevent 82 && adb shell input keyevent 61 && adb shell input keyevent 66 && adb shell input keyevent 66",
+    "check-pod": "cd ios && pod install && cd ..",
+    "clean-android": "cd android && ./gradlew clean && cd ..",
+    "clean-gradle": "rm -rf $HOME/.gradle/caches/",
+    "clean-all": "watchman watch-del-all && rm -rf $TMPDIR/metro-bundler-cache-* && npm cache clean --force && rm -rf $TMPDIR/react-native-packager-cache-*",
+    "android-bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
+    "android-assemble": "cd android && ./gradlew assembleRelease && cd .."
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.5",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-firebase/app": "^12.1.0",
+    "@react-native-firebase/messaging": "^12.1.0",
+    "@react-navigation/compat": "^5.3.15",
+    "@react-navigation/native": "^5.9.4",
+    "react": "17.0.1",
+    "react-native": "0.64.2",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.2.0",
+    "react-native-safe-area-context": "^3.2.0",
+    "react-native-screens": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/runtime": "^7.14.6",
+    "@react-native-community/eslint-config": "^3.0.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.29.0",
+    "jest": "^27.0.6",
+    "metro-react-native-babel-preset": "^0.66.0",
+    "react-test-renderer": "17.0.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
