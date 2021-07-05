@@ -5,12 +5,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-// import {createMyNavigator} from 'components/Navigator/TabNavigator';
-
-// import Test from 'containers/Test';
 
 //LogInStack
-import Introduce from 'containers/Introduce';
+import Introduce from 'containers/LogInStack/Introduce';
 import ForgotPassword from 'containers/LogInStack/ForgotPassword';
 import LogIn from 'containers/LogInStack/LogIn';
 import SignIn from 'containers/LogInStack/SignIn';
@@ -31,8 +28,6 @@ const CreateKitchenProfileStack = createStackNavigator();
 const MainStack = createStackNavigator();
 
 const RootStack = createStackNavigator();
-
-// const CustomStack = createMyNavigator();
 
 const navigationOptionsHandler = () => ({
   gestureEnabled: false,
@@ -111,13 +106,6 @@ function AppRoutes({isAuthenticated}) {
   return (
     <NavigationContainer>
       <RootStack.Navigator mode="modal" headerMode="none">
-        {/* <CustomStack.Navigator initialRouteName="Home">
-        <CustomStack.Screen
-          name="Home"
-          component={Home}
-          options={navigationOptionsHandler}
-        />
-      </CustomStack.Navigator> */}
         <RootStack.Screen name="LogInFlow" component={LogInFlow} />
         <RootStack.Screen
           name="CreateAccountFlow"
