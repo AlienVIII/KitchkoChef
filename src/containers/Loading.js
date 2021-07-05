@@ -15,7 +15,7 @@ const Loading = () => {
     // const isLoading = isFetching || mess; //|| authStore.isFetching;
     return {
       // isLoading: isFetching,
-      haveError: 'errorMessage',
+      haveError: '',
       isConnected: loaderStore.isConnected,
     };
   });
