@@ -1,29 +1,24 @@
 import React, {memo, useMemo} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, ActivityIndicator} from 'react-native';
 import {useSelector} from 'react-redux';
 // import NetInfo from '@react-native-community/netinfo';
 import {deviceWidth, size_30} from 'constants/dimentions'; //statusBarHeight
 import {PRIMARY_ERROR, PRIMARY_LIGHT} from 'constants/colors';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 // import {usePrevious} from 'utils/hook';
-const NoConnectionIcon = (
-  <AntDesign name="warning" size={size_30} color={PRIMARY_LIGHT} />
-);
 
 const Loading = () => {
   // const [isRendering, setRerenderStatus] = useState(false);
-  const {isConnected = false, haveError = ''} = useSelector(
-    ({loaderStore, intervalDataStore}) => {
-      //isLoading,
-      const {errorMessage} = intervalDataStore;
-      // const isLoading = isFetching || mess; //|| authStore.isFetching;
-      return {
-        // isLoading: isFetching,
-        haveError: errorMessage,
-        isConnected: loaderStore.isConnected,
-      };
-    },
-  );
+  const {isConnected = false, haveError = ''} = useSelector(({loaderStore}) => {
+    //isLoading,
+    // const {errorMessage} = intervalDataStore;
+    // const isLoading = isFetching || mess; //|| authStore.isFetching;
+    return {
+      // isLoading: isFetching,
+      haveError: 'errorMessage',
+      isConnected: loaderStore.isConnected,
+    };
+  });
 
   const errorTitle = useMemo(
     () =>
@@ -63,8 +58,8 @@ const Loading = () => {
       {/* <ActivityIndicator size="large" color="white" />
         {mess ? <Text style={styles.offlineText}>{mess}</Text> : null} */}
       <View style={styles.offlineContainer}>
-        {/* <ActivityIndicator size="large" color="white" /> */}
-        <NoConnectionIcon />
+        <ActivityIndicator size="large" color="white" />
+        <AntDesign name="warning" size={size_30} color={PRIMARY_LIGHT} />
         <Text style={styles.offlineText}>{errorTitle}</Text>
       </View>
     </View>

@@ -9,7 +9,7 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 // Components
 import Screens from './AppLoading';
-import {store, persistor} from 'state';
+import {store, persistor} from './state';
 
 const App: () => React$Node = () => (
   <Provider store={store}>

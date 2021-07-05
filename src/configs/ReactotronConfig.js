@@ -1,7 +1,7 @@
 import Reactotron from 'reactotron-react-native';
 import {reactotronRedux} from 'reactotron-redux';
 import {NativeModules} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage'; // defaults to localStorage for web
+import AsyncStorage from '@react-native-async-storage/async-storage'; // defaults to localStorage for web
 
 import url from 'url';
 

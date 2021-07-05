@@ -25,7 +25,13 @@ import KitchenProfile from 'containers/CreateKitchenProfileStack/KitchenProfile'
 //HomeStack
 import Home from 'containers/Home';
 
-const Stack = createStackNavigator();
+const LogInStack = createStackNavigator();
+const CreateAccountStack = createStackNavigator();
+const CreateKitchenProfileStack = createStackNavigator();
+const MainStack = createStackNavigator();
+
+const RootStack = createStackNavigator();
+
 // const CustomStack = createMyNavigator();
 
 const navigationOptionsHandler = () => ({
@@ -33,88 +39,96 @@ const navigationOptionsHandler = () => ({
   headerShown: false,
 });
 
-function LogInStack() {
+function LogInFlow() {
   return (
-    <Stack.Navigator initialRouteName="Introduce">
-      <Stack.Screen
+    <LogInStack.Navigator initialRouteName="Introduce">
+      <LogInStack.Screen
         name="Introduce"
         component={Introduce}
         options={navigationOptionsHandler}
       />
-      <Stack.Screen
+      <LogInStack.Screen
         name="LogIn"
         component={LogIn}
         options={navigationOptionsHandler}
       />
-      <Stack.Screen
+      <LogInStack.Screen
         name="SignIn"
         component={SignIn}
         options={navigationOptionsHandler}
       />
-      <Stack.Screen
+      <LogInStack.Screen
         name="ForgotPassword"
         component={ForgotPassword}
         options={navigationOptionsHandler}
       />
-    </Stack.Navigator>
+    </LogInStack.Navigator>
   );
 }
 
-function CreateAccountStack() {
+function CreateAccountFlow() {
   return (
-    <Stack.Navigator initialRouteName="CreateAccount">
-      <Stack.Screen
+    <CreateAccountStack.Navigator initialRouteName="CreateAccount">
+      <CreateAccountStack.Screen
         name="CreateAccount"
         component={CreateAccount}
         options={navigationOptionsHandler}
       />
-      <Stack.Screen
+      <CreateAccountStack.Screen
         name="WhereCooking"
         component={WhereCooking}
         options={navigationOptionsHandler}
       />
-    </Stack.Navigator>
+    </CreateAccountStack.Navigator>
   );
 }
 
-function CreateKitchenProfileStack() {
+function CreateKitchenProfileFlow() {
   return (
-    <Stack.Navigator initialRouteName="KitchenProfile">
-      <Stack.Screen
+    <CreateKitchenProfileStack.Navigator initialRouteName="KitchenProfile">
+      <CreateKitchenProfileStack.Screen
         name="KitchenProfile"
         component={KitchenProfile}
         options={navigationOptionsHandler}
       />
-    </Stack.Navigator>
+    </CreateKitchenProfileStack.Navigator>
   );
 }
 
 function MainFlow() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen
+    <MainStack.Navigator initialRouteName="Home">
+      <MainStack.Screen
         name="Home"
         component={Home}
         options={navigationOptionsHandler}
       />
-    </Stack.Navigator>
+    </MainStack.Navigator>
   );
 }
 
 function AppRoutes({isAuthenticated}) {
   return (
     <NavigationContainer>
-      {/* <CustomStack.Navigator initialRouteName="Home">
+      <RootStack.Navigator mode="modal" headerMode="none">
+        {/* <CustomStack.Navigator initialRouteName="Home">
         <CustomStack.Screen
           name="Home"
           component={Home}
           options={navigationOptionsHandler}
         />
       </CustomStack.Navigator> */}
-      <LogInStack />
-      <CreateAccountStack />
-      <CreateKitchenProfileStack />
-      <MainFlow />
+        <RootStack.Screen name="LogInFlow" component={LogInFlow} />
+        <RootStack.Screen
+          name="CreateAccountFlow"
+          component={CreateAccountFlow}
+        />
+        <RootStack.Screen
+          name="CreateKitchenProfileFlow"
+          component={CreateKitchenProfileFlow}
+        />
+        <RootStack.Screen name="MainFlow" component={MainFlow} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 }

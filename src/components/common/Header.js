@@ -17,9 +17,8 @@ import {Default_Regular, HelveticaNeue_Bold} from 'constants/fonts';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Header = ({isShow, title, haveBackBtn = false, navigation}) => {
-  const {datetime = '', clock = ''} = useSelector(
-    ({intervalDataStore}) => intervalDataStore.time,
-  );
+  const {datetime = '', clock = ''} = useSelector();
+  // ({intervalDataStore}) => intervalDataStore.time,
 
   const goBack = useCallback(() => navigation.goBack(), [navigation]);
 

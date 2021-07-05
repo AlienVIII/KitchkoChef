@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import AsyncStorage from '@react-native-community/async-storage'; // defaults to localStorage for web
+import AsyncStorage from '@react-native-async-storage/async-storage'; // defaults to localStorage for web
 import {persistReducer} from 'redux-persist';
 import weatherReducer from './weather/reducer';
 import loaderStore from './loader/reducer';
